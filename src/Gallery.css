@@ -1,0 +1,109 @@
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  --font-sans: 'Rubik', sans-serif;
+  --font-serif: 'Cardo', serif;
+  --bounce-duration: 0.5s;  /* Duration for each bounce */
+  --bounce-distance: 30px;  /* Distance for the side-to-side bounce */
+}
+
+.gallery-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.page-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  transition: transform var(--d) var(--e);
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .page-content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+  }
+
+  .gallery-slider.animate {
+    overflow: hidden;
+    animation: horizontalBounce var(--bounce-duration) ease-in-out 4; /* 4 bounces then stop */
+  }
+}
+
+.gallery-slider {
+  width: 100%;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.gallery-slide {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  animation: fadeIn ease 1s;
+}
+
+/* Fade-in effect for images */
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+/* Horizontal bounce animation */
+@keyframes horizontalBounce {
+  0%, 100% { transform: translateX(0); }
+  25%, 75% { transform: translateX(var(--bounce-distance)); }
+}
+
+/* Styling for slick slider dots */
+.slick-dots {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  background-color: #CA9721;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #1a1c29;
+}

@@ -1,0 +1,93 @@
+.contact-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  background-color: #2a2d3d;
+  z-index: 1;
+  color: #CA9721;
+}
+
+@media (min-width: 769px) {
+  .contact-container {
+    flex-direction: row;
+  }
+}
+
+h1 {
+    color: #CA9721;
+    font-size: 2.5em;
+    text-align: center;
+    font-family: 'Amaranth', sans-serif;
+}
+
+input, select, textarea, button {
+    width: 75%;
+    height: 40px;
+    padding: 0rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    appearance: none;
+}
+
+textarea {
+    height: auto;
+    resize: vertical;
+}
+
+button {
+    background-color: #CA9721;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #A47A1A;
+}
+
+.contact-form, .map-and-details {
+    flex: 1;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    max-width: 800px;
+    text-align: center;
+}
+
+.map-and-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  input, select, textarea, button {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .contact-form, .map-and-details {
+    max-width: 100%;
+  }
+}

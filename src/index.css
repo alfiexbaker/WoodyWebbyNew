@@ -1,0 +1,43 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #2a2d3d;
+}
+
+#root {
+  display: flex;
+  height: 100%;
+  background-color: #2a2d3d;
+}
+.loading-gif {
+  width: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* Initial transform for centering */
+  transform: translate(-50%, -50%);
+  animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both infinite;
+}
+
+@keyframes shake {
+  10%, 90% {
+    /* Combine the initial translate with the keyframe translate */
+    transform: translate(-50%, -50%) translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate(-50%, -50%) translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate(-50%, -50%) translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate(-50%, -50%) translate3d(4px, 0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .loading-gif {
+    width: 50px;
+  }
+}
