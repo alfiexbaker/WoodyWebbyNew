@@ -3,7 +3,7 @@
 
 .App {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding-top: 120px;
+  padding-top: 170px; /* Increased padding to accommodate the banner */
   width: 100%;
   box-sizing: border-box;
   min-height: 100vh;
@@ -121,7 +121,7 @@ h1 {
 
 @media (max-width: 768px) {
   .App {
-    padding-top: 60px;
+    padding-top: 120px; /* Updated for mobile with banner */
   }
 
   .woodroffe-section {
@@ -182,7 +182,7 @@ h1 {
 
 .social-icons i {
   font-size: 1em; /* Adjust this value to make the icons bigger or smaller */
-  }
+}
 
 
 .social-icons a {
@@ -257,7 +257,7 @@ h1 {
   border-bottom: none;
 }
 
-.menu-table tbody tr:hover {
+.menu-table tr:hover {
 }
 
 .menu-item-price {
